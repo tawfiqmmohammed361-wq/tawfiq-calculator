@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Calculator</title>
+</head>
+<head>
+    <title>My Calculator</title>
+
+    <style>
+        #lockScreen {
+    text-align: center;
+    margin-top: 100px;
+}
+
+#lockScreen input {
+    padding: 10px;
+    font-size: 18px;
+}
+
+#calculator {
+    display: none;
+}
+        body {
+            background-color: lightblue;
+            text-align: center;
+            font-family: Arial;
+        }
+
+        h1 {
+            color: darkblue;
+        }
+
+        #display {
+            width: 220px;
+            height: 40px;
+            font-size: 25px;
+            text-align: right;
+            background-color: white;
+        }
+
+        button {
+            width: 50px;
+            height: 45px;
+            margin: 3px;
+            font-size: 20px;
+            background-color: navy;
+            color: white;
+            border: none;
+            border-radius: 8px;
+        }
+
+        button {
+    background-color: navy;
+}
+        
+    </style>
+</head>
+.num1 {
+    background-color: red !important;
+}
+
+.num2 {
+    background-color: orange !important;
+}
+
+.num3 {
+    background-color: green !important;
+}
+
+.num4 {
+    background-color: blue !important;
+}
+
+.num5 {
+    background-color: purple !important;
+}
+
+.num6 {
+    background-color: brown !important;
+}
+
+.num7 {
+    background-color: deeppink !important;
+}
+
+.num8 {
+    background-color: teal !important;
+}
+
+.num9 {
+    background-color: darkorange !important;
+}
+
+.num0 {
+    background-color: darkgreen !important;
+}
+<body>
+    <div id="lockScreen">
+    <h1>🔒 Calculator Locked</h1>
+
+    <input type="password" id="pin" placeholder="Enter PIN">
+
+    <br><br>
+
+    <button onclick="unlock()">Unlock</button>
+
+    <p id="message"></p>
+</div>
+<div id="calculator">
+
+    <h1>Calculator</h1>
+
+    <input type="text" id="display" readonly>
+
+    <br><br>
+
+    <button style="background-color:red;" onclick="add('7')">7</button>
+<button style="background-color:orange;" onclick="add('8')">8</button>
+<button style="background-color:green;" onclick="add('9')">9</button>
+<button style="background-color:black;" onclick="add('/')">/</button>
+
+<br><br>
+
+<button style="background-color:blue;" onclick="add('4')">4</button>
+<button style="background-color:purple;" onclick="add('5')">5</button>
+<button style="background-color:brown;" onclick="add('6')">6</button>
+<button style="background-color:black;" onclick="add('*')">*</button>
+
+<br><br>
+
+<button style="background-color:pink;" onclick="add('1')">1</button>
+<button style="background-color:teal;" onclick="add('2')">2</button>
+<button style="background-color:darkorange;" onclick="add('3')">3</button>
+<button style="background-color:black;" onclick="add('-')">-</button>
+
+<br><br>
+
+<button style="background-color:darkgreen;" onclick="add('0')">0</button>
+<button style="background-color:black;" onclick="add('+')">+</button>
+<button style="background-color:darkred;" onclick="calculate()">=</button>
+<button style="background-color:gray;" onclick="clearDisplay()">C</button>
+
+    <script>
+        function unlock() {
+    let pin = document.getElementById("pin").value;
+
+    if (pin === "1234") {
+        document.getElementById("lockScreen").style.display = "none";
+        document.getElementById("calculator").style.display = "block";
+    } else {
+        document.getElementById("message").innerText = "Wrong PIN!";
+    }
+}
+        function add(value) {
+            document.getElementById("display").value += value;
+        }
+
+        function calculate() {
+            let display = document.getElementById("display");
+            display.value = eval(display.value);
+        }
+
+        function clearDisplay() {
+            document.getElementById("display").value = "";
+        }
+    </script>
+
+</body>
+</html>
+</div>
